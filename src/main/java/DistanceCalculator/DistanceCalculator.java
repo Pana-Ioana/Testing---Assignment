@@ -12,7 +12,7 @@ public class DistanceCalculator {
 
         String tokens[] = expression.split(" ");
         if ((tokens.length < 2) || (((tokens.length - 2) % 3) != 0)) {
-            throw new IllegalArgumentException("Invalid expression format");
+            throw new NumberFormatException("Invalid expression format");
         }
 
         double firstValue = Double.parseDouble(tokens[0]);
@@ -32,7 +32,6 @@ public class DistanceCalculator {
             }
         }
 
-        double result = convertedValue / unit.inMilimeters;
-        return result;
+        return convertedValue;
     }
 }
